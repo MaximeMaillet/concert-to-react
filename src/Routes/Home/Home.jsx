@@ -1,13 +1,35 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
+import { connect } from 'react-redux'
+
 import Header from "../../Components/Header/Header";
 
-export default class Home extends Component {
+import './style.scss';
+
+class Home extends Component {
   render() {
     return (
       <div>
         <Header/>
-        <p>MY HOME</p>
+        {this.props.isAuthenticated ?
+            ''
+          :
+            <section className="home-section d-flex flex-row">
+              <div className="home-bloc">
+                <Link to="/signin" className="btn btn-primary">Sign In</Link>
+              </div>
+              <div className="home-bloc">
+                <Link to="/login" className="btn btn-primary">Log In</Link>
+              </div>
+            </section>
+        }
       </div>
     )
   }
 }
+
+export default connect(
+  (state) => ({
+    isAuthenticated: state.auth.isAuthenticated,
+  })
+)(Home);

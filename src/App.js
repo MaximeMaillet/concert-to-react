@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import {Route, Link} from "react-router-dom";
+import {Route} from "react-router-dom";
 
 import Home from './Routes/Home/Home.jsx';
 import Login from './Routes/Login/Login.jsx';
+import Signin from './Routes/Signin/Signin.jsx';
+
+import './App.scss';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
       <div className="App">
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/signin" component={Signin} />
       </div>
     );
   }

@@ -1,19 +1,28 @@
 import React, {Component} from 'react';
+import Header from "../../Components/Header/Header.jsx";
+import SigninForm from '../../Components/Forms/SigninForm/SigninForm.jsx';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 import actions from '../../HOC/Authentication/actions';
 import history from '../../history';
 
-import Header from "../../Components/Header/Header.jsx";
-import LoginForm from "../../Components/Forms/LoginForm/LoginForm.jsx";
+import './signin.scss';
 
-class Login extends Component {
+class Signin extends Component {
   constructor(props) {
     super(props);
     if(props.isAuthenticated) {
       history.push('/');
     }
-  }
+  };
+
+  onSubmitSuccess = (response) => {
+    this.props.login(response.data.token);
+  };
+
+  onSubmitFail = (e) => {
+    console.log(e);
+  };
 
   componentWillReceiveProps(nextProps) {
     if(nextProps.isAuthenticated) {
@@ -21,23 +30,13 @@ class Login extends Component {
     }
   };
 
-  onSubmitSuccess = (response) => {
-    console.log('SUCCESS');
-    // this.props.login(response.data.token);
-  };
-
-  onSubmitFail = (err) => {
-    console.log('FAIL');
-    console.log(err);
-  };
-
   render() {
     return (
       <div>
         <Header/>
-        <section className="login-section d-flex flex-column m-5 p-5 bg-gray-100">
-          <h2>Log In</h2>
-          <LoginForm
+        <section className="signin-section d-flex flex-column m-5 p-5 bg-gray-100">
+          <h2>Sign In</h2>
+          <SigninForm
             onSubmitSuccess={this.onSubmitSuccess}
             onSubmitFail={this.onSubmitFail}
           />
@@ -52,4 +51,4 @@ export default connect(
     isAuthenticated: state.auth.isAuthenticated,
   }),
   (dispatch) => bindActionCreators({...actions}, dispatch)
-)(Login);
+)(Signin);
