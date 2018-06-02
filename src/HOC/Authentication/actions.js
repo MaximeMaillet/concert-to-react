@@ -13,7 +13,6 @@ export function login(token) {
       const decoded = decode(token);
       dispatch(loginSuccess(decoded));
     } catch(e) {
-      console.log(e);
       dispatch(loginFail(e));
     }
   }

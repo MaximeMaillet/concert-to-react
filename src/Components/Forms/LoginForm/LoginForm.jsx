@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Field, reduxForm } from 'redux-form';
 
+import {handleSubmitFail} from '../Errors';
 import InputText from '../../FormInputs/Fields/InputText.jsx';
 import InputPassword from '../../FormInputs/Fields/InputPassword.jsx';
 import submit from './submit';
@@ -19,13 +20,11 @@ class LoginForm extends Component {
           placeholder="john.doe@doemail.fr"
           component={InputText}
         />
-
         <Field
           label="Password :"
           name="password"
           component={InputPassword}
         />
-
         <button type="submit" className="btn btn-primary">Log In</button>
       </form>
     );
@@ -35,4 +34,5 @@ class LoginForm extends Component {
 export default reduxForm({
   form: name,
   onSubmit: submit,
+  onSubmitFail: handleSubmitFail,
 })(LoginForm);

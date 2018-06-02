@@ -12,7 +12,7 @@ class Signin extends Component {
   constructor(props) {
     super(props);
     if(props.isAuthenticated) {
-      history.push('/');
+      history.push('/search');
     }
   };
 
@@ -20,13 +20,9 @@ class Signin extends Component {
     this.props.login(response.data.token);
   };
 
-  onSubmitFail = (e) => {
-    console.log(e);
-  };
-
   componentWillReceiveProps(nextProps) {
     if(nextProps.isAuthenticated) {
-      history.push('/');
+      history.push('/search');
     }
   };
 

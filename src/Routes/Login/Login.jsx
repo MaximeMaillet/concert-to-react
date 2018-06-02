@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 import actions from '../../HOC/Authentication/actions';
 import history from '../../history';
+import {toastr} from 'react-redux-toastr'
 
 import Header from "../../Components/Header/Header.jsx";
 import LoginForm from "../../Components/Forms/LoginForm/LoginForm.jsx";
@@ -11,24 +12,19 @@ class Login extends Component {
   constructor(props) {
     super(props);
     if(props.isAuthenticated) {
-      history.push('/');
+      history.push('/search');
     }
   }
 
   componentWillReceiveProps(nextProps) {
     if(nextProps.isAuthenticated) {
-      history.push('/');
+      history.push('/search');
     }
   };
 
   onSubmitSuccess = (response) => {
-    console.log('SUCCESS');
-    // this.props.login(response.data.token);
-  };
-
-  onSubmitFail = (err) => {
-    console.log('FAIL');
-    console.log(err);
+    toastr.success('Success', 'You are authenticated');
+    this.props.login(response.data.token);
   };
 
   render() {
@@ -39,7 +35,6 @@ class Login extends Component {
           <h2>Log In</h2>
           <LoginForm
             onSubmitSuccess={this.onSubmitSuccess}
-            onSubmitFail={this.onSubmitFail}
           />
         </section>
       </div>

@@ -8,7 +8,6 @@ async function request(url, options) {
       return response.json();
     })
     .then((json) => {
-    console.log(json);
       if(saveDataRequest.status >= 200 && saveDataRequest.status < 300) {
         return {
           data: json,
@@ -34,20 +33,12 @@ export default {
       });
     },
     register: async(data) => {
-      return fetch(`${apiUrl}/authenticate/registers`, {
+      return request(`${apiUrl}/authenticate/registers`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(data)
-      })
-      .then((response) => {
-        return response.json();
-      })
-      .then((json) => {
-        return {
-          data: json,
-        }
       });
     },
     logout: async() => {

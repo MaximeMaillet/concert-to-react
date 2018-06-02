@@ -40,7 +40,6 @@ export default function reducer(state = initialState, action) {
         isAuthenticated: false,
       };
     } else {
-      console.log(user);
       return {
         ...state,
         isAuthenticated: true,

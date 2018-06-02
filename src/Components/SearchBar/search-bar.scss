@@ -1,0 +1,65 @@
+@import "~react-select/dist/react-select.css";
+
+.search-bar {
+  background-color: $gray-50;
+  height: 5rem;
+  border: 1px solid $secondary;
+  display: flex;
+
+  .btn-search-bar {
+    height: 100%;
+    width: 100px;
+    color: $text-primary;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .search-bar-input {
+    flex: auto;
+
+    .Select-control {
+      height: 100%;
+      border: none;
+      outline: none;
+
+      .Select-multi-value-wrapper {
+        display: flex;
+        height: 100%;
+
+        .Select-value {
+          color: $white;
+          background-color: $primary;
+          height: 2.5rem;
+          font-size: 1.1rem;
+          padding-top: 5px;
+          margin: auto 5px;
+          display: flex;
+
+          .Select-value-icon {
+            border: none;
+
+            &:hover {
+              color: $white;
+              background: none;
+            }
+          }
+        }
+
+        .Select-input {
+          margin: auto 5px;
+
+          input {
+            width: 100% !important;
+          }
+        }
+
+        .Select-placeholder {
+          padding-left: 15px;
+          display: flex;
+          align-items: center;
+          color: $secondary-light;
+        }
+      }
+    }
+  }
+}
