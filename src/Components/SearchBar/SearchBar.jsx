@@ -13,7 +13,18 @@ export default class SearchBar extends Component {
   }
 
   onChange = (values) => {
-    this.setState({values: values.map((val) => ({label: val.label, val}))});
+    const newValues = values.map((val) => ({
+      label: val.label,
+      value: val.value,
+    }));
+
+    this.setState({values: newValues});
+
+    if(this.props.onChange) {
+      this.props.onChange({
+        name: values.map((val) => val.value).join(' '),
+      });
+    }
   };
 
   render() {

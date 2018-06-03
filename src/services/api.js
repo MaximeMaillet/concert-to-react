@@ -21,6 +21,10 @@ async function request(url, options) {
     })
 }
 
+function getAuthorization() {
+  return `Bearer ${localStorage.getItem('token')}`;
+}
+
 export default {
   authenticate: {
     login: async(data) => {
@@ -54,6 +58,18 @@ export default {
     },
     set: () => {
 
+    }
+  },
+  search: {
+    artists: async(data) => {
+      return request(`${apiUrl}/searches/artists`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': getAuthorization(),
+        },
+        body: JSON.stringify(data)
+      });
     }
   }
 }

@@ -35,6 +35,7 @@ export default function reducer(state = initialState, action) {
 
     const {exp, iat, ...user} = decode(token);
     if ( exp < current_time) {
+      localStorage.removeItem('token');
       return {
         ...state,
         isAuthenticated: false,

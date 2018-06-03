@@ -3,7 +3,6 @@
 .search-bar {
   background-color: $gray-50;
   height: 5rem;
-  border: 1px solid $secondary;
   display: flex;
 
   .btn-search-bar {
@@ -12,10 +11,14 @@
     color: $text-primary;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    border: 1px solid $secondary;
+    border-left: none;
   }
 
   .search-bar-input {
     flex: auto;
+    border: 1px solid $secondary;
+    border-right: none;
 
     .Select-control {
       height: 100%;
