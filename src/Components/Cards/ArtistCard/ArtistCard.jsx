@@ -11,7 +11,10 @@ export default class ArtistCard extends Component {
         <div className="name">{this.props.name}</div>
         <div className="events">
           {this.props.events.map((event) => (
-            <div>{event.name}</div>
+            <div className="event">
+              <strong>{event.name}</strong>
+              <em>{event.startDate}</em>
+            </div>
           ))}
         </div>
       </div>
