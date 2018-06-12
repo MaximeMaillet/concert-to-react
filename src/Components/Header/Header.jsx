@@ -14,7 +14,6 @@ class Header extends Component {
           <div className="logo"/>
           <div className="title">
             <h1>Concert To</h1>
-            <h2>Let's go to concerts ...</h2>
           </div>
         </div>
         <div className="right">

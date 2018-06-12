@@ -1,10 +1,19 @@
 html, body {
   margin: 0;
   padding: 0;
+  background: url('./styles/background.jpg');
+  background-color: $secondary;
 }
 
 * {
   font-size: 15px;
   font-family: Georgia, serif;
   color: $text;
+}
+
+.main-bloc {
+  background-color: $white;
+  border-radius: 3px;
+  box-shadow: $small-shadow;
+  padding: 1rem;
 }

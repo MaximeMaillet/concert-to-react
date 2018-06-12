@@ -175,6 +175,7 @@ module.exports = {
                     './src/styles/variables.scss',
                     './src/styles/bootstrap.init.scss',
                     './src/styles/mixins.scss',
+                    '/src/styles/universal.scss',
                   ],
                 }
               },
