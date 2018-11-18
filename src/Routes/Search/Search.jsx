@@ -18,7 +18,7 @@ class Search extends Component {
       search: null,
     };
     if(!props.isAuthenticated) {
-      history.push('/login');
+      history.push('/');
     }
 
     props.search();
@@ -26,7 +26,7 @@ class Search extends Component {
 
   componentWillReceiveProps(nextProps, nextState) {
     if(!nextProps.isAuthenticated) {
-      history.push('/login');
+      history.push('/');
     }
   }
 

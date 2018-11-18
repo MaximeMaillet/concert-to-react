@@ -1,3 +1,4 @@
+import api from '../../services/api';
 import decode from 'jwt-decode';
 
 export const types = {
@@ -20,6 +21,7 @@ export function login(token) {
 
 export function logout() {
   return async(dispatch, getState) => {
+    await api.authenticate.logout();
     localStorage.removeItem('token');
     dispatch(logoutSuccess());
   }

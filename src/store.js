@@ -3,8 +3,6 @@ import { routerMiddleware } from 'react-router-redux'
 import thunk from 'redux-thunk'
 import rootReducer from './modules'
 import history from './history'
-import { composeWithDevTools } from 'redux-devtools-extension'
-
 
 const initialState = {}
 const enhancers = []

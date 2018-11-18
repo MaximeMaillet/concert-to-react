@@ -30,6 +30,8 @@ class AccountSmall extends Component {
 }
 
 export default connect(
-  (state) => ({}),
+  (state) => ({
+    user: state.auth.user,
+  }),
   (dispatch) => bindActionCreators({...actions}, dispatch)
 )(AccountSmall);

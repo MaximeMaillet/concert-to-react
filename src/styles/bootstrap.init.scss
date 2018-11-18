@@ -1,25 +1,39 @@
-@import "~bootstrap/scss/bootstrap";
+//@import "~bootstrap/scss/bootstrap";
 // @TODO Dont all include if we dont need all
 
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+@import "~bootstrap/scss/reboot";
+//@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+//@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/input-group";
+//@import "~bootstrap/scss/custom-forms";
+
+//@import "nav";
+//@import "navbar";
+//@import "card";
+//@import "breadcrumb";
+//@import "pagination";
+//@import "badge";
+//@import "jumbotron";
+//@import "alert";
+//@import "progress";
+//@import "media";
+//@import "list-group";
+//@import "close";
+@import "~bootstrap/scss/modal";
+//@import "tooltip";
+//@import "popover";
+//@import "carousel";
+@import "~bootstrap/scss/utilities";
+//@import "print";
+
 @import '~react-redux-toastr/src/styles/index';
-
-
-.callout {
-  border: 1px solid $gray-300;
-  color: $gray-700;
-  border-left-color: $gray-700;
-  border-left-width: 0.25rem;
-  padding: 0.5rem 1rem;
-  margin: 1.25rem 0px;
-  border-radius: $border-radius-sm;
-
-  p:last-child {
-    margin: 0;
-  }
-}
-
-@each $color, $value in $theme-colors {
-  .callout-#{$color} {
-    border-left-color: $value;
-  }
-}

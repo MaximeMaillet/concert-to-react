@@ -21,7 +21,3 @@
   box-shadow: $small-shadow;
   padding: 1rem;
 }
-
-.primary-card {
-  @include primary-card();
-}

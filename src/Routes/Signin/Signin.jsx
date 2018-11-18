@@ -29,26 +29,28 @@ class Signin extends Component {
 
   render() {
     return (
-      <section className="signin-section home-form">
-        <div className="row mb-3 mt-5">
-          <div className="col-10 col-sm-10 col-md-7 col-lg-5 col-xl-4 mx-auto primary-card">
-            <SiteTitle/>
+      <div className="container">
+        <section className="signin-section home-form">
+          <div className="row mb-3 mt-5">
+            <div className="col-10 col-sm-10 col-md-7 col-lg-5 col-xl-4 mx-auto primary-card">
+              <SiteTitle/>
+            </div>
           </div>
-        </div>
-        <div className="row mb-3">
-          <div className="col-10 col-sm-10 col-md-7 col-lg-5 col-xl-4 mx-auto primary-card">
-            <h2 className="text-center">Sign In</h2>
-            <SigninForm
-              onSubmitSuccess={this.onSubmitSuccess}
-            />
+          <div className="row mb-3">
+            <div className="col-10 col-sm-10 col-md-7 col-lg-5 col-xl-4 mx-auto primary-card">
+              <h2 className="text-center">Sign In</h2>
+              <SigninForm
+                onSubmitSuccess={this.onSubmitSuccess}
+              />
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="col-10 col-sm-10 col-md-7 col-lg-5 col-xl-4 mx-auto justify-content-center d-flex primary-card text-center">
-            <p className="footer"><Link to="/">Je me connecte</Link></p>
+          <div className="row">
+            <div className="col-10 col-sm-10 col-md-7 col-lg-5 col-xl-4 mx-auto justify-content-center d-flex primary-card text-center">
+              <p className="footer"><Link to="/">Je me connecte</Link></p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     )
   }
 }

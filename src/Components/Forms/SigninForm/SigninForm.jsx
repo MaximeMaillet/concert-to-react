@@ -33,25 +33,25 @@ class SigninForm extends Component {
         <Field
           name="email"
           placeholder="Email"
-          group={<Mail size="25" color="#52565e" />}
+          group={<Mail size="25" color="#41546e" />}
           type="email"
           component={Input}
         />
         <Field
           name="plainPassword"
           placeholder="Password"
-          group={<Lock size="25" color="#52565e" />}
+          group={<Lock size="25" color="#41546e" />}
           type="password"
           component={Input}
         />
         <Field
           name="plainPasswordRepeat"
           placeholder="Repeat"
-          group={<Lock size="25" color="#52565e" />}
+          group={<Lock size="25" color="#41546e" />}
           type="password"
           component={Input}
         />
-        <button type="submit" className="btn btn-primary">Sign In</button>
+        <button type="submit" className="btn btn-primary btn-concert-default">Sign In</button>
       </form>
     );
   }

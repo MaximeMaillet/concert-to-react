@@ -8,7 +8,6 @@ import Input from '../../FormInputs/Fields/Input.jsx';
 import submit from './submit';
 import validate from './validate';
 import FormErrors from "../../FormInputs/FormErrors";
-import Loader from "../../Loader/Loader.jsx";
 
 import actions from '../../Loader/actions';
 import '../forms.scss';
@@ -33,19 +32,19 @@ class LoginForm extends Component {
         <FormErrors error={this.props.error} />
         <Field
           name="email"
-          group={<Mail size="25" color="#52565e" />}
+          group={<Mail size="25" color="#41546e" />}
           placeholder="Email"
           type="email"
           component={Input}
         />
         <Field
           name="password"
-          group={<Lock size="25" color="#52565e" />}
+          group={<Lock size="25" color="#41546e" />}
           placeholder="Password"
           type="password"
           component={Input}
         />
-        <button type="submit" className="btn btn-primary btn-login">Let's to concert !</button>
+        <button type="submit" className="btn btn-primary btn-concert-default">Let's to concert !</button>
       </form>
     );
   }

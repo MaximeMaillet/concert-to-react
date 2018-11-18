@@ -9,18 +9,18 @@ $input-padding: 1em;
   .form-control {
     padding: $input-padding;
     font-size: $input-font-size;
-    color: $secondary;
-    border-color: $secondary;
+    color: $text-primary;
+    border-color: $text-primary;
     border-left: none;
 
     &:focus {
-      border-color: $secondary;
+      border-color: $text-primary;
       box-shadow: none;
     }
   }
 
   .input-group-text {
-    border-color: $secondary;
+    border-color: $text-primary;
     background-color: $primary;
 
     &.is-invalid {
@@ -34,8 +34,8 @@ $input-padding: 1em;
   }
 }
 
-.btn-login {
+.btn.btn-concert-default {
   padding: $input-padding;
-  color: $secondary;
+  color: $text-primary;
   font-size: $input-font-size;
 }
