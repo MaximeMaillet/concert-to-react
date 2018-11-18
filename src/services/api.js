@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:8888/api';
+const apiUrl = 'http://api.concerto.local/api';
 
 async function request(url, options) {
   let saveDataRequest = {};

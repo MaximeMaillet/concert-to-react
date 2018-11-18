@@ -23,29 +23,28 @@ export default function reducer(state = initialState, action) {
       isAuthenticated: false,
     }
   } else {
-    const current_time = Date.now() / 1000;
-    const token = localStorage.getItem('token');
+    let isAuthenticated = false;
+    let _user = null;
 
-    if(!token) {
+    try {
+      const current_time = Date.now() / 1000;
+      const token = localStorage.getItem('token');
+      const {exp, iat, ...user} = decode(token);
+      if ( exp < current_time) {
+        localStorage.removeItem('token');
+        isAuthenticated = false;
+      } else {
+        isAuthenticated = true;
+        _user = user;
+      }
+    } catch(e) {
+      isAuthenticated = false;
+    } finally {
       return {
         ...state,
-        isAuthenticated: false,
-      };
-    }
-
-    const {exp, iat, ...user} = decode(token);
-    if ( exp < current_time) {
-      localStorage.removeItem('token');
-      return {
-        ...state,
-        isAuthenticated: false,
-      };
-    } else {
-      return {
-        ...state,
-        isAuthenticated: true,
-        user: user,
-      };
+        isAuthenticated,
+        user: _user,
+      }
     }
   }
 };
