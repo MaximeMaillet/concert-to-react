@@ -6,6 +6,7 @@ import Home from './Routes/Home/Home.jsx';
 import Login from './Routes/Login/Login.jsx';
 import Signin from './Routes/Signin/Signin.jsx';
 import Search from './Routes/Search/Search.jsx';
+import GlobalLoader from "./Components/Loader/GlobalLoader.jsx";
 
 import './App.scss';
 
@@ -25,6 +26,7 @@ class App extends Component {
           transitionIn="fadeIn"
           transitionOut="fadeOut"
         />
+        <GlobalLoader />
       </div>
     );
   }

@@ -9,7 +9,9 @@ import history from '../../history';
 import LoginForm from "../../Components/Forms/LoginForm/LoginForm";
 import SigninForm from "../../Components/Forms/SigninForm/SigninForm";
 
-import './style.scss';
+import './home.scss';
+import {Link} from "react-router-dom";
+import SiteTitle from "../../Components/SiteTitle/SiteTitle";
 
 class Home extends Component {
   constructor(props) {
@@ -36,25 +38,27 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="container pt-5">
-        {this.props.isAuthenticated ?
-            ''
-          :
-            <section className="main-bloc home-section d-flex flex-row">
-              <div className="col-md-6">
-                <h2>Log In</h2>
-                <LoginForm
-                  onSubmitSuccess={this.onSubmitLoginSuccess}
-                />
-              </div>
-              <div className="col-md-6">
-                <h2>Sign In</h2>
-                <SigninForm
-                  onSubmitSuccess={this.onSubmitSigninSuccess}
-                />
-              </div>
-            </section>
-        }
+      <div className="container">
+        <section className="home-section home-form">
+          <div className="row mb-3 mt-5">
+            <div className="col-10 col-sm-10 col-md-7 col-lg-5 col-xl-4 mx-auto primary-card">
+              <SiteTitle/>
+            </div>
+          </div>
+          <div className="row mb-3">
+            <div className="col-10 col-sm-10 col-md-7 col-lg-5 col-xl-4 mx-auto primary-card">
+              <h2 className="text-center">Log In</h2>
+              <LoginForm
+                onSubmitSuccess={this.onSubmitLoginSuccess}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-10 col-sm-10 col-md-7 col-lg-5 col-xl-4 mx-auto justify-content-center d-flex primary-card text-center">
+              <p className="footer"><Link to="/signin">Je m'inscris</Link></p>
+            </div>
+          </div>
+        </section>
       </div>
     )
   }

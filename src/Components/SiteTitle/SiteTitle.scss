@@ -1,0 +1,11 @@
+
+.global-title {
+  text-align: center;
+  margin-bottom: 5px;
+
+  h1 {
+    border-bottom: 5px solid $primary;
+    display: inline;
+    padding: 0 0.2em;
+  }
+}

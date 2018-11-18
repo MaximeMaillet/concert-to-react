@@ -5,3 +5,23 @@
   bottom: -0.05em;
   vertical-align: -0.125em;
 }
+
+@mixin colorPlaceholder($color) {
+  .form-control::-webkit-input-placeholder { color: $color; }  /* WebKit, Blink, Edge */
+  .form-control:-moz-placeholder { color: $color; }  /* Mozilla Firefox 4 to 18 */
+  .form-control::-moz-placeholder { color: $color; }  /* Mozilla Firefox 19+ */
+  .form-control:-ms-input-placeholder { color: $color; }  /* Internet Explorer 10-11 */
+  .form-control:-ms-input-placeholder { color: $color; }
+}
+
+@mixin primary-card() {
+  font-family: $font-family;
+  background-color: $white;
+  border-radius: 3px;
+  box-shadow: $small-shadow;
+  padding: 1rem;
+}
+
+.primary-card {
+  @include primary-card();
+}

@@ -1,0 +1,41 @@
+$input-font-size: 1em;
+$input-padding: 1em;
+
+@include colorPlaceholder($secondary-light);
+
+.form-group {
+  margin: 0.5em 0;
+
+  .form-control {
+    padding: $input-padding;
+    font-size: $input-font-size;
+    color: $secondary;
+    border-color: $secondary;
+    border-left: none;
+
+    &:focus {
+      border-color: $secondary;
+      box-shadow: none;
+    }
+  }
+
+  .input-group-text {
+    border-color: $secondary;
+    background-color: $primary;
+
+    &.is-invalid {
+      background-color: $error-secondary;
+    }
+  }
+
+  .is-invalid {
+    @include colorPlaceholder($danger);
+    border-color: $danger;
+  }
+}
+
+.btn-login {
+  padding: $input-padding;
+  color: $secondary;
+  font-size: $input-font-size;
+}

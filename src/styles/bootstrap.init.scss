@@ -2,3 +2,24 @@
 // @TODO Dont all include if we dont need all
 
 @import '~react-redux-toastr/src/styles/index';
+
+
+.callout {
+  border: 1px solid $gray-300;
+  color: $gray-700;
+  border-left-color: $gray-700;
+  border-left-width: 0.25rem;
+  padding: 0.5rem 1rem;
+  margin: 1.25rem 0px;
+  border-radius: $border-radius-sm;
+
+  p:last-child {
+    margin: 0;
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .callout-#{$color} {
+    border-left-color: $value;
+  }
+}

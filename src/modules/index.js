@@ -5,6 +5,7 @@ import {reducer as toastrReducer} from 'react-redux-toastr'
 
 import authReducer from '../HOC/Authentication/reducer';
 import searchReducer from '../HOC/Search/reducer';
+import loaderReducer from '../Components/Loader/reducer';
 
 export default combineReducers({
   routing: routerReducer,
@@ -12,4 +13,5 @@ export default combineReducers({
   auth: authReducer,
   toastr: toastrReducer,
   search: searchReducer,
+  loader: loaderReducer,
 })
