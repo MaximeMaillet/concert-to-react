@@ -7,7 +7,6 @@ export default class FormErrors extends Component {
       return null;
     }
 
-    console.log(error);
     let message = error.message;
 
     let exception = '';

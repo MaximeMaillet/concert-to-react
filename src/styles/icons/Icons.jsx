@@ -1,5 +1,10 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import sIcon from './Components/sIcon';
+import hIcon from './Components/hIcon';
+
+export const SearchIcon = sIcon;
+export const HeartIcon = hIcon;
 
 export class LogoIcon extends Component {
   static defaultProps = {
@@ -53,18 +58,21 @@ export class Loader extends Component {
     width: '100%',
     height: '100%',
     fill: '#30c39c',
+    className: '',
   };
 
   static propTypes = {
     width: PropTypes.string,
     height: PropTypes.string,
     fill: PropTypes.string,
+    className: PropTypes.string,
   };
 
   render() {
-    const {width, height, fill} = this.props;
+    const {width, height, fill, className} = this.props;
     return (
       <svg width={width} height={height}
+           className={className}
            viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
         <g transform="rotate(180 50 50)">
           <rect ng-attr-x="{{16.666666666666668 - config.width/2}}" y="32.5" ng-attr-width="{{config.width}}" height="22.8518" fill={fill} x="8.666666666666668" width="16">

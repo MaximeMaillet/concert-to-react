@@ -1,48 +1,60 @@
 @import "~react-select/dist/react-select.css";
 
 .search-bar {
-  background-color: $gray-50;
   height: 5rem;
   display: flex;
+  $search-border-radius: 10px;
 
   .btn-search-bar {
     height: 100%;
     width: 100px;
-    color: $text-primary;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    border-radius: 0 $search-border-radius $search-border-radius 0;
     border: 1px solid $secondary;
     border-left: none;
+
+    .search-icon {
+      width: 60%;
+      height: 60%;
+
+      path {
+        fill: $secondary;
+      }
+    }
   }
 
   .search-bar-input {
     flex: auto;
     border: 1px solid $secondary;
+    border-radius: $search-border-radius 0 0 $search-border-radius;
     border-right: none;
 
     .Select-control {
       height: 100%;
       border: none;
       outline: none;
+      border-radius: $search-border-radius 0 0 $search-border-radius;
 
       .Select-multi-value-wrapper {
         display: flex;
         height: 100%;
+        padding: 1em;
 
         .Select-value {
+          display: flex;
           color: $white;
           background-color: $primary;
-          height: 2.5rem;
-          font-size: 1.1rem;
-          padding-top: 5px;
-          margin: auto 5px;
-          display: flex;
+          height: 100%;
+          font-size: 1.3em;
+          border-radius: $search-border-radius;
+          justify-content: center;
+          align-items: center;
+          margin: 0;
 
           .Select-value-icon {
             border: none;
 
             &:hover {
-              color: $white;
+              color: $secondary;
               background: none;
             }
           }
@@ -57,10 +69,10 @@
         }
 
         .Select-placeholder {
-          padding-left: 15px;
+          padding-left: 2em;
           display: flex;
           align-items: center;
-          color: $secondary-light;
+          color: $primary-light;
         }
       }
     }

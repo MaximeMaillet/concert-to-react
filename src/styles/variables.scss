@@ -2,8 +2,8 @@ $font-family: 'Archivo', 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe 
 $font-family-second: 'Montserrat', 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
 $primary: #30c39e;
-$primary-dark: #689F38;
-$primary-light: #DCEDC8;
+$primary-dark: #18614f;
+$primary-light: #d5f3eb;
 
 $text: #212121;
 
@@ -24,9 +24,9 @@ $valid-primary: green;
 $white: #FFFFFF;
 $off-white: #EEEEEE;
 
-$gray: #7d93b2;
-$gray-50:  #fafcff;
-$gray-100: #eff6ff;
+$gray: $text-primary;
+$gray-50: #66d9bc;
+$gray-100: #52d4b3;
 
 $body-background: $white;
 

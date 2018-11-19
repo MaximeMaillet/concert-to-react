@@ -1,4 +1,5 @@
 import api from '../../services/api';
+import loaderActions from '../../Components/Loader/actions';
 
 export const types = {
   SEARCH_SET_RESULTS: 'search/setResults',
@@ -11,7 +12,8 @@ export const types = {
 function search(search) {
   return async(dispatch, getState) => {
     try {
-      dispatch(startLoading());
+      dispatch(loaderActions.startLoader('Recherche ...'));
+      dispatch(startLoading())
       const result = await api.search.artists(search);
       dispatch(setResults(result.data.results));
       dispatch(setPagination(result.data.pagination));
@@ -19,6 +21,7 @@ function search(search) {
       dispatch(error(e));
     } finally {
       dispatch(stopLoading());
+      dispatch(loaderActions.stopLoader());
     }
   }
 }

@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {toastr} from 'react-redux-toastr';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import history from '../../history';
@@ -9,7 +8,9 @@ import actions from '../../HOC/Search/actions';
 import Header from '../../Components/Header/Header';
 import SearchBar from "../../Components/SearchBar/SearchBar";
 import SearchResults from './Components/SearchResults';
-import SearchPagination from './Components/SearchPagination';
+import Pagination from "../../Components/Pagination/Pagination";
+
+import './Search.scss';
 
 class Search extends Component {
   constructor(props) {
@@ -38,25 +39,50 @@ class Search extends Component {
 
   onChange = async(values) => {
     this.setState({
-      search: values,
+      search: {
+        ...this.state.search,
+        ...values
+      },
     });
+  };
+
+  generatePaginationLink = (page) => {
+    this.setState({
+      search: {
+        ...this.state.search,
+        page,
+      },
+    });
+    window.scrollTo(0,0);
   };
 
   render() {
     return (
       <div>
         <Header />
-        <section className="search-section container">
-
+        <section className="container search-section">
+          <div className="row mb-2">
+            <div className="col-12">
               <SearchBar
                 onChange={this.onChange}
               />
-
-              <SearchResults
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <SearchResults/>
+            </div>
+          </div>
+          <div className="row mt-2">
+            <div className="col-12">
+              <Pagination
+                generateLink={this.generatePaginationLink}
+                pagination={this.props.pagination}
+                loading={this.props.loading}
+                endSearch={this.props.endSearch}
               />
-
-              <SearchPagination
-              />
+            </div>
+          </div>
         </section>
       </div>
     );
@@ -66,7 +92,9 @@ class Search extends Component {
 export default connect(
   (state) => ({
     isAuthenticated: state.auth.isAuthenticated,
-    endSearch: state.endSearch,
+    endSearch: state.search.endSearch,
+    loading: state.search.loading,
+    pagination: state.search.pagination,
   }),
   (dispatch) => bindActionCreators({...actions}, dispatch)
 )(Search);

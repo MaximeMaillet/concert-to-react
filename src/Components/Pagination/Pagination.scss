@@ -1,0 +1,49 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .pagination-ul {
+    margin: 0 auto 1em;
+    padding: 0.9em 0.5em;
+    background-color: $primary;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+
+    li {
+      list-style-type: none;
+
+      .page-link {
+        background-color: $primary-light;
+        padding: 0.5em;
+        margin: 0;
+        color: $text-primary;
+        border-top: 1px solid $text-primary;
+        border-bottom: 1px solid $text-primary;
+        border-right: 1px solid $text-primary;
+
+        &:hover {
+          text-decoration: none;
+          background-color: $primary-dark;
+          color: $white;
+          cursor: pointer;
+        }
+
+        &.disabled {
+          text-decoration: none;
+          background-color: $primary-dark;
+          color: $white;
+          cursor: default;
+        }
+      }
+
+      &:nth-of-type(1) {
+        .page-link {
+          border-left: 1px solid $text-primary;
+        }
+      }
+    }
+  }
+}
+

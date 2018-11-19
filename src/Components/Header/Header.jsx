@@ -9,6 +9,10 @@ import AccountMenu from "./Components/AccountMenu";
 import './Header.scss'
 
 class Header extends Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextProps.isAuthenticated;
+  }
+
   render() {
     return (
       <header>

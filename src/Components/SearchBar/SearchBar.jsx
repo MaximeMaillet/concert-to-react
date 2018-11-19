@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Select from 'react-select';
-import search from './search.svg';
+import {SearchIcon} from "../../styles/icons/Icons";
 
 import './search-bar.scss';
 
@@ -23,6 +23,7 @@ export default class SearchBar extends Component {
     if(this.props.onChange) {
       this.props.onChange({
         name: values.map((val) => val.value).join(' '),
+        page: 1,
       });
     }
   };
@@ -42,7 +43,7 @@ export default class SearchBar extends Component {
           promptTextCreator={(label) => label}
         />
         <button className="btn btn-primary btn-search-bar">
-          <img src={search} width="50" height="50" />
+          <SearchIcon className="search-icon" />
         </button>
       </div>
     );

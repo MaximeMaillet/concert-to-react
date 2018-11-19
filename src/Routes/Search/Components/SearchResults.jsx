@@ -6,9 +6,11 @@ class SearchResults extends Component {
 
   render() {
     return (
-      <div className="search-results row">
+      <div className="row row-eq-height">
         {this.props.results.map((result, index) => (
-          <ArtistCard className="col-md-4" key={index} {...result}/>
+          <div className="col-4 col-md-4 col-xl-3 mt-2 mb-2" key={index}>
+            <ArtistCard key={index} {...result} />
+          </div>
         ))}
       </div>
     );
